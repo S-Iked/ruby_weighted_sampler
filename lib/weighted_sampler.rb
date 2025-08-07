@@ -17,7 +17,7 @@ class WeightedSampler
 
   def get()
     r = rand(@total_weight)
-    i = @weight_pos.bsearch_index {|x| x >= r }
+    i = @weight_pos.bsearch_index {|x| x > r }
     @elements_keys[i]
   end
 end
