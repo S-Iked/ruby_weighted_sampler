@@ -1,6 +1,6 @@
 # Ruby Weighted Sampler
 
-重み月ランダムライブラリ
+重み付きランダムライブラリ
 
 
 ## Usage
