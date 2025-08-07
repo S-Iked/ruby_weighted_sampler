@@ -5,6 +5,8 @@
 
 ## Usage
 
+    require "weighted_sampler"
+    
     ab_group = {"a": 1, "b": 9}
     ws = WeightedSampler.new(ab_group)
 
