@@ -43,4 +43,9 @@ RSpec.describe WeightedSampler do
       expect(v).to be >= 1
     end
   end
+
+  it "test error case 1" do
+    # weitghtがnumericでない場合は失敗
+    expect {WeightedSampler.new({"a": 9, "b": "1"})}.to raise_error(WeightedSampler::Error)
+  end
 end
