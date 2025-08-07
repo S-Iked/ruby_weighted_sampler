@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 class WeightedSampler
-  VERSION = '0.0.1'.freeze
+  VERSION = "0.0.1"
+  class Error < StandardError; end
 
   def initialize(elements)
     @total_weight = 0
@@ -9,15 +10,16 @@ class WeightedSampler
     @weight_pos = []
     @elements = elements
 
-    elements.each do |k , w|
+    elements.each do |k, w|
+      raise WeightedSampler::Error, "weight must be a numeric value: #{k}: #{w}" if !w.is_a?(Numeric)
       @total_weight += w
       @weight_pos << @total_weight
     end
   end
 
-  def get()
+  def get
     r = rand(@total_weight)
-    i = @weight_pos.bsearch_index {|x| x > r }
+    i = @weight_pos.bsearch_index { |x| x > r }
     @elements_keys[i]
   end
 end
