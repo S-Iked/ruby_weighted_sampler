@@ -1,15 +1,15 @@
 # frozen_string_literal: true
 
-require_relative "lib/weighted_sampler/version"
+require_relative "lib/weighted_sampler"
 
 Gem::Specification.new do |spec|
   spec.name = "weighted_sampler"
   spec.version = WeightedSampler::VERSION
-  spec.authors = ["TODO: Write your name"]
+  spec.authors = ["Shinji Ikeda"]
   spec.email = ["shinji.ikeda@supership.jp"]
 
-  spec.summary = "TODO: Write a short summary, because RubyGems requires one."
-  spec.description = "TODO: Write a longer description or delete this line."
+  spec.summary = "Weigthed Random sampling"
+  spec.description = "Weigthed Random sampling."
   spec.homepage = "TODO: Put your gem's website or public repo URL here."
   spec.license = "MIT"
   spec.required_ruby_version = ">= 3.1.0"
