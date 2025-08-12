@@ -55,6 +55,20 @@ RSpec.describe WeightedSampler do
     end
   end
 
+  it "test case 5" do
+    ws = WeightedSampler.new({a: 1, b: 9, c: 3}, seed: 1)
+    ret = {a: 0, b: 0, c: 0}
+
+    100.times.each do |n|
+      _r = ws.get(n)
+       ret[_r] += 1
+    end
+    expect(ret[:a] < ret[:b] && ret[:c] < ret[:b]).to eq true
+    ret.each do |k, v|
+      expect(v).to be >= 1
+    end
+  end
+
   it "test error case 1" do
     # weitghtがnumericでない場合は失敗
     expect { WeightedSampler.new({a: 9, b: "1"}) }.to raise_error(WeightedSampler::Error)

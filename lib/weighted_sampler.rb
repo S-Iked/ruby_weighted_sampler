@@ -24,8 +24,12 @@ class WeightedSampler
     end
   end
 
-  def get(seed: nil)
-    r = @rand.rand(@total_weight)
+  def get(n=nil)
+    r = if n.nil?
+      @rand.rand(@total_weight)
+    else
+      n % @total_weight
+    end
     i = @weight_pos.bsearch_index { |x| x > r }
     @elements_keys[i]
   end
