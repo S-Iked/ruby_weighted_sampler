@@ -18,7 +18,7 @@ class WeightedSampler
     end
 
     elements.each do |k, w|
-      raise WeightedSampler::Error, "weight must be a numeric value: #{k}: #{w}" if !w.is_a?(Numeric)
+      raise WeightedSampler::Error, "weight must be a numeric value: #{k}: #{w}" if !w.is_a?(Integer)
       @total_weight += w
       @weight_pos << @total_weight
     end
