@@ -13,6 +13,9 @@
     # ab_groupのhash keyのいずれかが返る
     r = ws.get
 
+    # 入力値(整数）を元に判定（同じ値を指定した場合の戻り値は変わらない)
+    r = ws.get(1)
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
