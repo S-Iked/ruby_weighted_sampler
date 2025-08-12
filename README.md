@@ -7,7 +7,7 @@
 
     require "weighted_sampler"
     
-    ab_group = {"a": 1, "b": 9}
+    ab_group = {"a": 1, "b": 9} #　weightは整数のみ指定可能
     ws = WeightedSampler.new(ab_group)
 
     # ab_groupのhash keyのいずれかが返る
