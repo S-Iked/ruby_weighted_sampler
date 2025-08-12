@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class WeightedSampler
-  VERSION = "0.0.2"
+  VERSION = "0.0.3"
   class Error < StandardError; end
 
   def initialize(elements, seed: nil)
